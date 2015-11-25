@@ -1,0 +1,88 @@
+<!DOCTYPE unspecified PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>How To's</title>
+<style type="text/css">
+.sourceCode {
+	font-size : 8pt;
+	font-style : italic;
+	border: 1px solid #EE0000;
+	background: #CCCCCC;
+	padding: 10px 10px 10px 10px;
+}
+</style>
+</head>
+<body>
+	<h3>Q1. How to pop up a alert message ?</h3>
+	A1. call JS method : popAlert,
+	<br />
+	<b>Demo :</b>
+	<br />
+	<div class="sourceCode">popAlert("This is my title", "This is my message");</div>
+	<hr />
+	
+	<h3>Q2. How to pop up a confirm message ?</h3>
+	A2. call JS method : popConfirm,
+	<br />
+	<b>Demo :</b>
+	<br />
+	<div class="sourceCode">popConfirm("This is my title", "This is my message", <br />
+	&nbsp;&nbsp;&nbsp;&nbsp;function(){<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// This method will be called while OK clicked.<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;}, <br />
+	&nbsp;&nbsp;&nbsp;&nbsp;function(){<br />
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// This method will be called while Cancel clicked.<br />
+	&nbsp;&nbsp;&nbsp;&nbsp;});</div>
+	<hr />
+	
+	<h3>Q3. How to navigate to other page ?</h3>
+	A3. call JS method : navigate,
+	<br />
+	<b>Demo :</b>
+	<br />
+	<div class="sourceCode">navigate(THIS_IS_THE_URL);</div>
+	<hr />
+	
+	<h3>Q4. How to edit internationalization file ?</h3>
+	A3. install JInto in your eclipse, you can install this plugin from this URL : http://www.guh-software.de/eclipse/
+	<hr />
+	
+	<h3>Q5. How to use internationalization property in HTML code ?</h3>
+	A3. you can create record in the i18n/applicationResources_*.properties, and then set the value or innerText of your component to #{ApplicationResource.XXXXXXXXXX}, our framework will fill this value with the correct type of language.
+	<br />
+	<b>Demo :</b>
+	<br />
+	<div class="sourceCode"><pre>login.button.login=Login		#this is the record in the applicationResources_en_US.properties<br/>
+login.button.login=登陆		#this is the record in the applicationResources_zh_CN.properties<br/></pre>
+	<xmp><input type="button" class="QRTbutton" value="#{ApplicationResource.login.button.login}" onclick="dologin()" /></xmp></div>
+	<hr />
+	
+	<h3>Q6. How to create a button with JQuery-UI style ?</h3>
+	A3. you can add class QRTbutton to the button you created.
+	<br />
+	<b>Demo :</b>
+	<br />
+	<div class="sourceCode"><xmp><input type="button" class="QRTbutton" /></xmp></div>
+	<hr />
+
+	<h3>Q7. How to execute a function while loading a screen ?</h3>
+	A3. you can define a function inited() in your JS code, this method will be called while loading your screen.
+	<br />
+	<b>Demo :</b>
+	<br />
+	<div class="sourceCode">function inited() {
+		<br />// codes here will be called while loading this screen.
+	<br />}</div>
+	<hr />
+	
+	<h3>Q8. How to execute a function while unloading a screen ?</h3>
+	A3. you can define a function destroy() in your JS code, this method will be called while unloading your screen.
+	<br />
+	<b>Demo :</b>
+	<br />
+	<div class="sourceCode">function destroy() {
+		<br />// codes here will be called while unloading this screen.
+	<br />}</div>
+	<hr />
+</body>
+</html>

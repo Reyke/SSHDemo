@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" language="javascript" src="../js/jquery-ui-1.10.3/jquery-1.9.1.js"></script>
+<script type="text/javascript" language="javascript" src="../js/common.js"></script>
+<script type="text/javascript" src="../js/jquery/jquery.i18n.properties-min-1.0.9.js"></script>
+<script type="text/javascript" src="../js/PlaceholderSupporter.js"></script>
+<script type="text/javascript" src="../js/jquery-ui-1.10.3/ui/jquery-ui.js"></script>
+<link rel="stylesheet" href="../js/jquery-ui-1.10.3/themes/base/minified/jquery-ui.min.css" />
+<script type="text/javascript" src="../js/propertyBinding.js"></script>
+<script type="text/javascript" src="../js/colortable.js"></script>
+</head>
+<body>
+<div id="content">
+	<link rel="stylesheet" type="text/css" href="/qrt/js/uploadify/uploadify.css"/>
+	<script type="text/javascript" language="javascript" src="/qrt/js/uploadify/jquery.uploadify.min.js"></script>
+	<script type="text/javascript" language="javascript" src="/qrt/js/site/updateReport.js"></script>
+	<script type="text/javascript" language="javascript" src="/qrt/js/site/showImages.js"></script>
+	<div class="header"></div>
+	<div class="content">
+		<div class="content-header">
+			<div class="history-content" style="display:none;">
+				<span class="display-inlineblock">Test Case History</span>
+				<table id="message-table">
+					<style type="text/css">
+						table#message-table {width:500px;border-collapse: collapse;margin-left:130px;}
+						table#message-table th,td{font-size:8pt;}
+					</style>
+					<thead>
+ 						<tr><th>#{ApplicationResource.updateR.message.status}</th><th>#{ApplicationResource.updateR.message.issueT}</th><th>#{ApplicationResource.updateR.message.issueD}</th><th>#{ApplicationResource.updateR.message.date}</th></tr>
+ 					</thead>
+ 					<tbody id="message-body"></tbody>
+				</table>
+			</div>
+		</div>
+		<div class="content-body">
+			<div class="content-body-left padding-margin">
+				<div class="content-body-left-top">
+					<div class="div-border"></div>
+				</div>
+				<div class="div-task">
+					<div class="div-task-menu background-gray border-bottom1">
+						<span class="div-task-menu-mytasks background-fff border-bottom0" var="0">#{ApplicationResource.updateR.message.mytask}</span>
+						<span class="div-task-menu-alltasks background-gray border-bottom1" style="display:none;" var="1">#{ApplicationResource.updateR.message.alltask}</span>
+					</div>
+					<select class="task-select" style="margin-top:3px;">
+						<option value="">#{ApplicationResource.updateR.select.first}</option>
+					</select>
+					<input id="complete" type="button" value="#{ApplicationResource.updateR.button.complete}"/>
+					<span id="task_status" style="display:none;"></span>
+					<div id="sortBy" class="sortBy" style="position:relative;display:none;">
+						<div>
+							<a id="byPeople" href="javascript:;"><img src="/qrt/image/byPeople.png"/></a>
+							<a id="byIssue" href="javascript:;"><img src="/qrt/image/byIssue.png"/></a>
+						</div>
+						<div id="divPeople" class="divPeople" var="0">
+							<ul>
+							</ul>
+						</div>
+						<div id="divIssue" class="divIssue" var="0">
+							<ul>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="div-set-test">
+					<div id="testcase-tree"></div>
+				</div>
+			</div>
+			<div class="content-body-right padding-margin">
+				<div class="div-border"></div>
+				<div id="content-body-right-issue-form" style="display:none;">
+					<div class="content-body-right-top">
+						<div class="respon-tester">
+							<span style="width:140px;">#{ApplicationResource.updateR.label.responsibileT}</span><span id="tester"></span>
+							<span>#{ApplicationResource.updateR.message.status}</span><span id="status">Failed</span>
+							<div id="div-now-test"><span style="width:60px;">owner</span><span id="now_tester"></span></div>
+						</div>
+					</div>
+					<div class="content-body-right-middle">
+						<div id="div-data-issue">
+							<form id="form-issue-data" style="font-size:9pt;">
+								<div id="common-data">
+									<div class="div-issue-type" style="margin-bottom:10px;">
+										<span>#{ApplicationResource.updateR.message.issueT}</span>
+										<select name="issueType" id="issueType">
+											<option value="">#{ApplicationResource.updateR.select.issueT}</option>
+										</select>
+										<span class="manualPassed">
+											<input id="Manual_passed" type="checkbox" name="manualPassedInd" value="Y"/>
+											<span id="manual_title">Manual Passed.</span>
+										</span>
+									</div>
+									<input type="hidden" id="caseId" name="caseId" value="'"/>
+								</div>
+								<div id="issue-data"></div>
+								<input id="screen-shot-file" type="file" name="myfile" value="upload" />
+							</form>
+						</div>
+					</div>
+					<div class="content-body-right-bottom">
+						<div id="div-button" style="text-align:right;padding-bottom:10px;padding-right:10px;">
+							<input id="data-save" type="button" value="#{ApplicationResource.user.button.save}" var=""/>
+							<input id="data-reset" type="reset" value="#{ApplicationResource.user.button.reset}"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content-footer"></div>
+	</div>
+	<div class="footer"></div>
+	<div class="div-display" style="display:none;">
+		<div id="issue-type">
+			<div class="div-issue script-issue">
+				<div>
+					<span>#{ApplicationResource.updateR.scriptI.action}</span><font class="requires">*</font>
+					<input type="text" name="moduleActionName"/>
+				</div>
+				<div>
+					<span>#{ApplicationResource.updateR.scriptI.epn}</span><font class="requires">*</font>
+					<input type="text" name="errorPageName"/>
+				</div>
+				<div>
+					<span>#{ApplicationResource.updateR.common.errorD}</span><font class="requires">*</font>
+					<textarea rows="" cols="" name="errorDescription"></textarea>
+				</div>
+			</div>
+			<div class="div-issue data-issue">
+				<div>
+					<span>#{ApplicationResource.updateR.dataI.dataT}</span><font class="requires">*</font>
+					<select id="data-type" name="dataType">
+					</select>
+				</div>
+				<div>
+					<span>#{ApplicationResource.updateR.dataI.data}</span><font class="requires">*</font>
+					<input type="text" name="errorData"/>
+				</div>
+				<div>
+					<span>#{ApplicationResource.updateR.common.errorD}</span><font class="requires">*</font>
+					<textarea rows="" cols="" name="errorDescription"></textarea>
+				</div>
+			</div>
+			<div class="div-issue performance-issue">
+				<div>
+					<span>#{ApplicationResource.updateR.performanceI.actionN}</span><font class="requires">*</font>
+					<input type="text" name="moduleActionName"/>
+				</div>
+				<div>
+					<span>#{ApplicationResource.updateR.performanceI.pageN}</span><font class="requires">*</font>
+					<input type="text" name="errorPageName"/>
+				</div>
+				<div>
+					<span>#{ApplicationResource.updateR.common.errorD}</span><font class="requires">*</font>
+					<textarea rows="" cols="" name="errorDescription"></textarea>
+				</div>
+			</div>
+			<div class="div-issue object-change">
+				<div>
+					<span>#{ApplicationResource.updateR.scriptI.action}</span><font class="requires">*</font>
+					<input type="text" name="moduleActionName"/>
+				</div>
+				<div>
+					<span>#{ApplicationResource.updateR.scriptI.epn}</span><font class="requires">*</font>
+					<input type="text" name="errorPageName"/>
+				</div>
+				<div>
+					<span>#{ApplicationResource.updateR.objectC.beforeC}</span><font class="requires">*</font>
+					<input type="text" name="beforeChange"/>
+				</div>
+				<div>
+					<span>#{ApplicationResource.updateR.objectC.afterC}</span><font class="requires">*</font>
+					<input type="text" name="afterChange"/>
+				</div>
+				<div>
+					<span>#{ApplicationResource.updateR.common.errorD}</span><font class="requires">*</font>
+					<textarea rows="" cols="" name="errorDescription"></textarea>
+				</div>
+			</div>
+			<div class="div-issue possible-defect">
+				<div>
+					<span>#{ApplicationResource.updateR.scriptI.epn}</span><font class="requires">*</font>
+					<input type="text" name="errorPageName"/>
+				</div>
+				<div>
+					<span>#{ApplicationResource.updateR.dataI.data}</span>
+					<input type="text" name="data"/>
+				</div>
+				<div>
+					<span>#{ApplicationResource.updateR.possibleD.title}</span><font class="requires">*</font>
+					<input type="text" name="title"/>
+				</div>
+				<div>
+					<span>#{ApplicationResource.updateR.possibleD.defectN}</span>
+					<input type="text" name="defectNumber"/>
+				</div>
+				<div>
+					<span>#{ApplicationResource.updateR.possibleD.defectS}</span>
+					<select id="defect-status" class="defect-status" name="defectStatus">
+					</select>
+				</div>
+				<div>
+					<span>#{ApplicationResource.updateR.possibleD.actualR}</span><font class="requires">*</font>
+					<textarea rows="" cols="" name="actualResult"></textarea>
+				</div>
+				<div>
+					<span>#{ApplicationResource.updateR.possibleD.expectedR}</span><font class="requires">*</font>
+					<textarea rows="" cols="" name="expectedResult"></textarea>
+				</div>
+				<div>
+					<span>#{ApplicationResource.updateR.possibleD.reproducedS}</span><font class="requires">*</font>
+					<textarea rows="" cols="" name="reproducedSteps"></textarea>
+				</div>
+			</div>
+			<div class="div-issue known-issue">
+			<!-- 
+				<div>
+					<span>#{ApplicationResource.updateR.scriptI.epn}</span><font class="requires">*</font>
+					<input type="text" name="errorPageName"/>
+				</div>
+				<div>
+					<span>#{ApplicationResource.updateR.dataI.data}</span>
+					<input type="text" name="data"/>
+				</div>
+				<div>
+					<span>#{ApplicationResource.updateR.possibleD.title}</span><font class="requires">*</font>
+					<input type="text" name="title"/>
+				</div>
+			-->
+				<div>
+					<span>#{ApplicationResource.updateR.possibleD.defectN}</span>
+					<input type="text" name="defectNumber"/>
+				</div>
+			<!-- 	
+				<div>
+					<span>#{ApplicationResource.updateR.possibleD.defectS}</span>
+					<select id="defect-status" class="defect-status" name="defectStatus">
+					</select>
+				</div>
+				<div>
+					<span>#{ApplicationResource.updateR.possibleD.actualR}</span><font class="requires">*</font>
+					<textarea rows="" cols="" name="actualResult"></textarea>
+				</div>
+				<div>
+					<span>#{ApplicationResource.updateR.possibleD.expectedR}</span><font class="requires">*</font>
+					<textarea rows="" cols="" name="expectedResult"></textarea>
+				</div>
+				<div>
+					<span>#{ApplicationResource.updateR.possibleD.reproducedS}</span><font class="requires">*</font>
+					<textarea rows="" cols="" name="reproducedSteps"></textarea>
+				</div>
+			-->
+			</div>
+			<div class="div-issue other-issue">
+				<div>
+					<span>#{ApplicationResource.updateR.possibleD.title}</span><font class="requires">*</font>
+					<input type="text" name="title"/>
+				</div>
+				<div>
+					<span>#{ApplicationResource.updateR.common.errorD}</span><font class="requires">*</font>
+					<textarea rows="" cols="" name="errorDescription"></textarea>
+				</div>
+			</div>
+			<div class="div-issue device-issue">
+				<div>
+					<span>#{ApplicationResource.updateR.deviceI.deviceN}</span><font class="requires">*</font>
+					<input type="text" name="deviceName"/>
+				</div>
+				<div>
+					<span>#{ApplicationResource.updateR.common.errorD}</span><font class="requires">*</font>
+					<textarea rows="" cols="" name="errorDescription"></textarea>
+				</div>
+			</div>
+			<div class="screen-shot">
+				<div>
+					<span style="font-weight:bold;margin-left:20px;">#{ApplicationResource.updateR.deviceI.screenS}</span>
+					<div id="screen-shots">
+						<div id="img-show"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="content-box">
+			<div>
+				<span id="select-file-span">#{ApplicationResource.updateR.dataI.files}</span>
+                <span id="notask-alert">#{ApplicationResource.updateR.dataI.notask}</span>
+                <span id="case-statu-green" i18n-ignore="true">#{ApplicationResource.updateR.dataI.case_statu_green}</span>
+                <span id="case-statu-red" i18n-ignore="true">#{ApplicationResource.updateR.dataI.case_statu_red}</span>
+                <span id="case-statu-orange" i18n-ignore="true">#{ApplicationResource.updateR.dataI.case_statu_orange}</span>
+                <span id="case-statu-yellow" i18n-ignore="true">#{ApplicationResource.updateR.dataI.case_statu_yellow}</span>
+                <span id="case-update-success">#{ApplicationResource.updateR.dataI.case_update_success}</span>
+                <span id="case-update-failed">#{ApplicationResource.updateR.dataI.case_update_failed}</span>
+                <span id="case-update-title">#{ApplicationResource.updateR.dataI.case_update_title}</span>
+                <span id="task-noselect-title">#{ApplicationResource.updateR.dataI.case_update_title}</span>
+                <span id="task-complete-title">#{ApplicationResource.updateR.dataI.case_update_title}</span>
+                <span id="task-noselect-alert">#{ApplicationResource.updateR.dataI.task_noselect_alert}</span>
+                <span id="task-complete-success">#{ApplicationResource.updateR.dataI.case_complete_success}</span>
+                <span id="task-complete-failed">#{ApplicationResource.updateR.dataI.case_complete_failed}</span>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

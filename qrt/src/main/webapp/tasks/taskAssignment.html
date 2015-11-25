@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="zh-CN" xml:lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<title>Task Assignment</title>
+<link type="text/css" rel="stylesheet" href="../css/taskAssignment.css"/>
+<link type="text/css" rel="stylesheet" href="../js/jquery-ui-1.10.3/themes/base/minified/jquery-ui.min.css"/>
+<script type="text/javascript" language="javascript" src="../js/jquery-ui-1.10.3/jquery-1.9.1.js"></script>
+<script type="text/javascript" language="javascript" src="../js/jquery-ui-1.10.3/ui/jquery-ui.js"></script> 
+<script type="text/javascript" language="javascript" src="../js/site/taskAssignment.js"></script>
+<script type="text/javascript" language="javascript" src="/js/common.js"></script>
+</head>
+<body>
+<div id="content">
+	<script type="text/javascript" language="javascript" src="/qrt/js/site/taskAssignment.js"></script>
+	<div class="header"></div>
+	<div class="content">
+		<div id="task-contain">
+			<div id="task-select">
+				<div id="task-select-left">
+					<div id="task-select-country">
+						<label>#{ApplicationResource.task.label.country} </label>
+						<div class="ui-buttonset">
+							<button  style="width:142px;" id="rerun" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button" aria-disabled="false">
+								<span id="country_show" class="ui-button-text-ext" var=""></span>
+							</button>
+							<button id="country-selector" class="ui-button ui-widget ui-state-default ui-button-icon-only ui-corner-right" role="button" aria-disabled="false" title="Select an action">
+								<span class="ui-button-icon-primary ui-icon ui-icon-triangle-1-s"></span>
+								<span class="ui-button-text-ext">Select</span>
+							</button>
+						</div>
+						<ul id="country_ul" class="ui-menu ui-widget ui-widget-content ui-corner-all" role="menu" tabindex="0" aria-activedescendant="ui-id-4" style="position:absolute;display: none; top: 34px;width:142px;">
+						</ul>
+					</div>
+					<br/>
+					<div id="task-select-project">
+						<label>#{ApplicationResource.task.label.project}</label>
+						<div class="ui-buttonset">
+							<button  style="width:142px;" id="rerun" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button" aria-disabled="false">
+								<span id="project_show" class="ui-button-text-ext" var=""></span>
+							</button>
+							<button id="project-selector" class="ui-button ui-widget ui-state-default ui-button-icon-only ui-corner-right" role="button" aria-disabled="false" title="Select an action">
+								<span class="ui-button-icon-primary ui-icon ui-icon-triangle-1-s"></span>
+								<span class="ui-button-text-ext">Select</span>
+							</button>
+						</div>
+						<ul id="project_ul" class="ui-menu ui-widget ui-widget-content ui-corner-all" role="menu" tabindex="0" aria-activedescendant="ui-id-4" style="position:absolute;display: none; top: 34px;width:142px;">
+						</ul>
+					</div>
+					<br/>
+			<div>
+					<div id="task-select-task">
+						<label>#{ApplicationResource.task.label.task} </label>
+						<div style="margin-top:0.5px;" class="ui-buttonset">
+							<button  style="width:142px;" id="rerun" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button" aria-disabled="false">
+								<span id="task_show" class="ui-button-text-ext" var=""></span>
+							</button>
+							<button style="height:30px;" id="task-selector" class="ui-button ui-widget ui-state-default ui-button-icon-only ui-corner-right" role="button" aria-disabled="false" title="Select an action">
+								<span class="ui-button-icon-primary ui-icon ui-icon-triangle-1-s"></span>
+								<span class="ui-button-text-ext">Select</span>
+							</button>
+						</div>
+						<ul id="task_ul" class="ui-menu ui-widget ui-widget-content ui-corner-all" role="menu" tabindex="0" aria-activedescendant="ui-id-4">
+						</ul>
+						</div>
+						   <br/>
+							<div id="case-run-time">
+			<label>#{ApplicationResource.task.label.time}</label>
+			   </div>
+		    <div id="case-time" class="timepicker">
+			<input type="text" id="caseexetime" />
+		     </div>
+		
+		</div>
+			<div id="task-run-detail">
+						<div id="task-run-detail-smoke"> <span id="smoking_total">0</span> #{ApplicationResource.task.rundetail.smoke_tests}, <span id="smoking_passed">0</span> #{ApplicationResource.task.rundetail.passed}, <span id="smoking_failed">0</span> #{ApplicationResource.task.rundetail.failed} <span>,</span> #{ApplicationResource.task.rundetail.failed_rate} : <span id="smoking_passed_rate">100%</span>.</div>
+						<div id="task-run-detail-assignment">#{ApplicationResource.task.rundetail.total} <span id="test_total">0</span>, <span id="test_failed">0</span> #{ApplicationResource.task.rundetail.failed}, <span id="tester_num">0</span> #{ApplicationResource.task.rundetail.tester_num}, <span id="task_avg">0</span> #{ApplicationResource.task.rundetail.each_tester}.</div>
+					</div>
+	 <div id="users-assignment">
+	</div>
+				</div>
+				<div id="task-select-right" style="display:none;">
+                    <div style="float:right;margin-bottom:10px;">
+                        <a href="javascript:;" id="inportData">#{ApplicationResource.task.rundetail.inportData}</a>
+                    </div>
+				
+				</div>
+			</div>
+			<div id="smoke-assignment">
+				<div id="smoke-input"></div>
+				<input type="checkbox" id="admin_select"/>
+				<label style="width:185px;_width:175px;*width:175px;">#{ApplicationResource.task.label.smoketestassignment}</label>
+				<div id="somker-assignment-list">
+					<div class="ui-buttonset">
+						<button  style="width:142px;" id="rerun" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button" aria-disabled="false">
+							<span id="admin_show" class="ui-button-text-ext" var=""></span>
+						</button>
+						<button id="admin-selector" class="ui-button ui-widget ui-state-default ui-button-icon-only ui-corner-right" role="button" aria-disabled="false" title="Select an action">
+							<span class="ui-button-icon-primary ui-icon ui-icon-triangle-1-s"></span>
+							<span class="ui-button-text-ext">Select</span>
+						</button>
+					</div>
+					<ul id="admin_ul" class="ui-menu ui-widget ui-widget-content ui-corner-all" role="menu" tabindex="0" aria-activedescendant="ui-id-4" style="position:absolute;display: none; top: 34px;width:142px;">
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="users-contain" class="ui-widget">
+			<table id="users" class="ui-widget ui-widget-content">
+				<thead>
+					<tr class="ui-widget-header ">
+						<th width="120">#{ApplicationResource.task.table.assignment}</th>
+						<th>#{ApplicationResource.task.table.name}</th>
+						<th>#{ApplicationResource.task.table.employeeno}</th>
+						<th>#{ApplicationResource.task.table.email}</th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div id="users-assignment">
+		<div id="finish-time">
+			<label>#{ApplicationResource.task.label.finish_date}</label>
+		</div>
+		<div id="timepicker">
+			<input type="text" id="datepicker" />
+		</div>
+		<div id="send-task">
+			<button id="sendtask" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+				<span id="sendtask" class="ui-button-text">#{ApplicationResource.task.button.sendemail}</span>
+			</button>
+		</div>
+	</div>
+	<div class="footer">
+		<div style="display:none;">
+			<span id="taskassignment-tester-select-title">#{ApplicationResource.task.alert.testerselect.title}</span>
+			<span id="taskassignment-tester-select-sendto">#{ApplicationResource.task.alert.testerselect.sendto} </span>
+			<span id="taskassignment-title">#{ApplicationResource.task.alert.assignment.title}</span>
+			<span id="taskassignment-finishdate">#{ApplicationResource.task.alert.assignment.finishdate}</span>
+			<span id="taskassignment-tester">#{ApplicationResource.task.alert.assignment.tester}</span>
+			<span id="taskassignment-task">#{ApplicationResource.task.alert.assignment.task}</span>
+			<span id="taskassignment-emailsend-success">#{ApplicationResource.task.alert.assignment.emailsend.success}</span>
+			<span id="taskassignment-emailsend-failed">#{ApplicationResource.task.alert.assignment..emailsend.failed}</span>
+            <div id="inportData-div">
+                <div><input type="file" name="select file"/></div>
+                <div>
+                    <button id="execute-import" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false">
+                        <span id="execute-import" class="ui-button-text">#{ApplicationResource.task.button.execute_import}</span>
+                    </button>
+                </div>
+            </div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

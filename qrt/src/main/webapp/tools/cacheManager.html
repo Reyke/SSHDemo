@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>Cache Manager</title>
+<script type="text/javascript" src="../js/jquery-ui-1.10.3/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="../js/jsonBinding.js"></script>
+</head>
+
+<body>
+<script type="text/javascript">
+$(function () {
+	// load caches list
+	$.get("../service/cache", null, function (data, textStatus, jqXHR) {
+		
+	}, "json").done(function (data) {
+		initCacheList(data);
+	}).fail(function (data) {
+		alert("fail" + data);
+	});
+	
+	initCacheList = function (data ) {
+		// clear Cache List content
+		$("#CacheList").html("");
+		
+		for (var i = 0; i < data.length; i++) {
+			$("<a onclick='loadCacheDetail(&quot;" + data[i] + "&quot;)'>" + data[i] + "</a>&nbsp;&nbsp; <a onclick='evictCache(&quot;" + data[i] + "&quot;)'>Evict</a><br />").appendTo($("#CacheList"));
+		}
+		
+	};
+	
+	evictCache = function (cacheName) {
+		$.ajax("../service/cache/" + cacheName, {
+			async : false,
+			cache : false,
+			complete : function (jqXHR, textStatus) {
+				alert(textStatus);
+			}, 
+			type : "DELETE"
+		});		
+	};
+	
+	loadCacheDetail = function (cacheName) {
+		$.get("../service/cache/" + cacheName, null, function (data, textStatus, jqXHR) {
+			
+		}, "json").done(function (data) {
+			$("#CacheDetail").text(data);
+		}).fail(function (data) {
+			alert("fail" + data);
+		});	
+	};
+});
+</script>
+
+<style>
+div#CacheList {
+	display : inline-block; 
+	width : 29%; 
+	background : #ffffff; 
+	border : 1px solid #600030; 
+	height : 500px; 
+	float: left;
+	line-height : 25px;
+}
+
+div#CacheList a {
+	font-size : 10pt;
+	cursor : pointer;
+	color : #003D79;
+}
+
+div#CacheDetail {
+	display : inline-block; 
+	width : 69%; 
+	background : #ffffff; 
+	border : 1px solid #600030; 
+	height : 500px; 
+	float: left;
+	line-height : 25px;
+}
+</style>
+<div id="content" style="width : 100%; height : 600px; line-height : 15px;">
+	<div id="CacheMessage" style="height : 50px; background : #FFF8D7;"></div>
+	<div id="CacheList">
+	
+	</div>
+	<div id="CacheDetail"></div>
+</div>
+</body>
+</html>

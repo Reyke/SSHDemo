@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xsi:noNamespaceSchemaLocation="ehcache.xsd" updateCheck="true"  
+    monitoring="autodetect">  
+    <!--  
+    <diskStore path="java.io.tmpdir" /> -->  
+    <diskStore path="C:/cache"/>  
+    <defaultCache maxElementsInMemory="10000" eternal="false"  
+        timeToIdleSeconds="120" timeToLiveSeconds="120" overflowToDisk="true"  
+        maxElementsOnDisk="10000000" diskPersistent="false"  
+        diskExpiryThreadIntervalSeconds="120" memoryStoreEvictionPolicy="LRU" />  
+          
+    <cache name="employees" maxElementsInMemory="1000"  
+        maxElementsOnDisk="1000" eternal="false" overflowToDisk="true"  
+        diskSpoolBufferSizeMB="20" timeToIdleSeconds="300" timeToLiveSeconds="600"  
+        memoryStoreEvictionPolicy="LFU" />  
+
+    <cache name="roles" maxElementsInMemory="10"  
+        maxElementsOnDisk="10" eternal="false" overflowToDisk="true"  
+        diskSpoolBufferSizeMB="20" timeToIdleSeconds="300" timeToLiveSeconds="600"  
+        memoryStoreEvictionPolicy="LFU" />  
+        
+    <cache name="qaAdmin" maxElementsInMemory="100"  
+        maxElementsOnDisk="100" eternal="false" overflowToDisk="true"  
+        diskSpoolBufferSizeMB="20" timeToIdleSeconds="300" timeToLiveSeconds="600"  
+        memoryStoreEvictionPolicy="LFU" />  
+        
+    <cache name="qaTester" maxElementsInMemory="100"  
+        maxElementsOnDisk="100" eternal="false" overflowToDisk="true"  
+        diskSpoolBufferSizeMB="20" timeToIdleSeconds="300" timeToLiveSeconds="600"  
+        memoryStoreEvictionPolicy="LFU" />  
+
+    <cache name="tasks" maxElementsInMemory="100"  
+        maxElementsOnDisk="100" eternal="false" overflowToDisk="true"  
+        diskSpoolBufferSizeMB="20" timeToIdleSeconds="300" timeToLiveSeconds="600"  
+        memoryStoreEvictionPolicy="LFU" />
+        
+    <cache name="defectStatusType" maxElementsInMemory="10"  
+        maxElementsOnDisk="10" eternal="false" overflowToDisk="true"  
+        diskSpoolBufferSizeMB="20" timeToIdleSeconds="300" timeToLiveSeconds="600"  
+        memoryStoreEvictionPolicy="LFU" />    
+    <cache name="issueType" maxElementsInMemory="20"  
+        maxElementsOnDisk="10" eternal="false" overflowToDisk="true"  
+        diskSpoolBufferSizeMB="20" timeToIdleSeconds="300" timeToLiveSeconds="600"  
+        memoryStoreEvictionPolicy="LFU" />    
+    <cache name="dataIssueType" maxElementsInMemory="10"  
+        maxElementsOnDisk="10" eternal="false" overflowToDisk="true"  
+        diskSpoolBufferSizeMB="20" timeToIdleSeconds="300" timeToLiveSeconds="600"  
+        memoryStoreEvictionPolicy="LFU" />    
+        
+</ehcache>    

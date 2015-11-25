@@ -1,0 +1,23 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+	<import
+		resource="classpath:/com/qvc/cn/it/report/config/properties-loader-beans.xml" />
+	<bean id="emailSender" class="com.qvc.cn.it.report.email.EmailSenderSMTPImpl">
+		<property name="smtpHost">
+			<value>${SMTP.host}</value>
+		</property>
+		<property name="smtpPort">
+			<value>${SMTP.port}</value>
+		</property>
+		<property name="userName">
+			<value>${SMTP.userName}</value>
+		</property>
+		<property name="password">
+			<value>${SMTP.password}</value>
+		</property>
+		<property name="fromAddress">
+			<value>${SMTP.fromAddress}</value>
+		</property>
+	</bean>
+</beans>

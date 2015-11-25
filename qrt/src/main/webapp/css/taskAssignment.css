@@ -1,0 +1,38 @@
+@CHARSET "UTF-8";
+input.text { margin-bottom:12px; width:95%; padding: .4em; }
+fieldset { padding:0; border:0; margin-top:25px; }
+h1 { font-size: 1.2em; margin: .6em 0; }
+.header{width:100%;height:50px;}
+.content{width:900px;height:auto;margin:0px auto;}
+/*@Override from jquery ui button  */
+.ui-button {display: inline-block;padding: 0;line-height: normal;margin-right: .1em;cursor: pointer;vertical-align: middle;text-align: center;overflow: visible;}
+div.ui-buttonset button.ui-button span.ui-button-text{height:13px;}
+div.content div#task-contain div#task-select,div#smoke-assignment{width:900px;margin:0px auto;margin-bottom:10px;}
+div.content div#task-contain div#task-select{height:90px;}
+div.content div#task-contain div#task-select label{font-family: Verdana,Arial,sans-serif;font-size: 1.3em;font-weight:bold;display:inline-block;_display:inline;*display:inline;zoom:1;width:188px;margin-left:23px;}
+div.content div#task-contain div#task-select div{display:inline-block;_display:inline;*display:inline;zoom:1;margin-bottom: 2px;}
+div.content div#task-contain div#task-select div#task-run-detail{font-family: Verdana,Arial,sans-serif;font-size: 1.3em;font-weight:bold;float:right;width:465px;height:35px;margin-top:55px;}
+div.content div#task-contain div#task-select div#task-select-project div.ui-buttonset{_margin-left:-3px;*margin-left:-3px;}
+div.content div#task-contain div#task-select div#task-select-left,div#task-select-right{display:inline-block;*display:inline;_display:inline;zoom:1;}
+div.content div#task-contain div#task-select div#task-select-left{float:left;}
+div.content div#task-contain div#task-select div#task-select-right{float:right;}
+div.content div#task-contain div#task-select div#task-run-detail{margin-bottom: 0px;}
+div.content div#task-contain div#task-select div#task-run-detail div{float:right;}
+div.content div#task-contain div#smoke-assignment input{display:inline-block;margin:0px;padding:0px;vertical-align:middle;}
+div.content div#task-contain div#smoke-assignment label{font-family: Verdana,Arial,sans-serif;font-size: 1.2em;margin:0px 5px;vertical-align:middle;display:inline-block;_display:inline;*display:inline;zoom:1;width:183px;}
+div.content div#task-contain div#smoke-assignment div#somker-assignment-list{display:inline-block;_display:inline;;*display:inline;inline;zoom:1;}
+div#task-select-task div button span.ui-button-text{height:28px;*height:25px;_height:25px;padding:0px;}
+div#task-select-task div button#task-selector{_margin-left:3px;*margin-left:3px;}
+div#users-contain table {border-collapse: collapse; width: 900px;  margin:0px auto; }
+div#users-contain table td, div#users-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align:center; }
+.checkbox-assignmen{display:inline-block;_display:inline;*display:inline;zoom:1;}
+.ui-dialog .ui-state-error { padding: .3em; }
+.validateTips { border: 1px solid transparent; padding: 0.3em; }
+div#users-assignment{width:900px;margin:20px auto 0px;}
+div#users-assignment div#send-task{float:right;}
+div#users-assignment div#finish-time label{font-family: Verdana,Arial,sans-serif;font-size:1.2em;font-weight:bold;margin-left:20px;display:inline-block;_display:inline;*display:inline;zoom:1;float:left;}
+div#users-assignment div#finish-time,div#timepicker{display:inline-block;_display:inline;*display:inline;zoom:1;float:left;}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+div.content div#task-contain div#task-select div{display:inline-block;margin-bottom: 0px;*display:inline;_display:inline;zoom:1;}
+}
+

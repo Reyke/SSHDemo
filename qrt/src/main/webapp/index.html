@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>QVC QA Reporting Toolkit</title>
+<link rel="stylesheet" href="js/jquery-ui-1.10.3/themes/base/minified/jquery-ui.min.css" />
+<script type="text/javascript" src="js/json2.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.3/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="js/jquery-ui-1.10.3/ui/jquery-ui.js"></script>
+<script type="text/javascript" src="js/jquery/jquery.i18n.properties-min-1.0.9.js"></script>
+<script type="text/javascript">
+	var loginFromIndex = true;
+</script>
+<link rel="stylesheet" href="css/main.css" />
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="js/PlaceholderSupporter.js"></script>
+<script type="text/javascript" src="js/propertyBinding.js"></script>
+<script type="text/javascript" src="js/colortable.js"></script>
+</head>
+<body>
+	<div id="divHeader" >
+		<div id="head-logo">
+			<a href="/qrt/"><img id="imgLogo" src="image/logo.jpg" style="border: 0"/></a>
+			<span id="logoText">QA Reporting Toolkit</span>
+		</div>
+		<div id="divMainMessageBox" ></div>
+		<div id="divHeaderRightBox">
+			<div id="divLanguageBox">
+				<div id="languageBox">
+					<input type="radio" id="radio1" name="radio" />
+					<label id="lang_zh" for="radio1" style="_margin-right:-0.7em;*margin-right:-0.7em;_height:24px;*height:24px;">中文</label>
+					<input type="radio" id="radio2" name="radio" checked="checked" />
+					<label id="lang_en" for="radio2" style="_height:24px;*height:24px;">English</label>
+				</div>
+			</div>
+			<div id="divUserInfoBox" >
+				<div id="divLogOff">
+					<a href="#" onclick="return logOff();" id="anchorLogOff" style="display: none;">#{ApplicationResource.head.logoff}</a>
+				</div>
+				<div id="divRoleInfo">
+					<span id="txtRole" style="display: none;">#{ApplicationResource.head.group}</span>
+					<span id="txtRoleValue" i18n-ignore="true"></span>
+				</div>
+				<div id="divEmpInfo">
+					<span id="txtEmpNo" style="display: none;">#{ApplicationResource.head.user}</span>
+					<span id="txtEmpNoValue"  i18n-ignore="true"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="divMenu-background">
+		<div id="divMenu" style="display: none;">
+			<a onclick="navigate('employeeManager.html');" style="display:none;margin-left:53px;" id="menuUserManagement">#{ApplicationResource.menu.label.usermanagement}</a>
+			<a onclick="navigate('tasks/taskAssignment.html');" style="display:none;" id="menuTaskAssignment">#{ApplicationResource.menu.label.taskassignment}</a>
+			<a onclick="navigate('updateReport/updateReport.html');" style="display:none;" id="menuUpdateReport">#{ApplicationResource.menu.label.updatereport}</a>
+			<a onclick="navigate('exportReport/reportDefinition.html');" style="display:none;" id="menuReportDefinition">#{ApplicationResource.menu.label.reportDefinition}</a>
+			<a onclick="navigate('exportReport/exportReport.html');" style="display:none;" id="menuExportReport">#{ApplicationResource.menu.label.exportreport}</a>
+		</div>
+	</div>
+	<div id="divBody"></div>
+	<div id="divFooter">Created By QVC IT China.</div>
+	<div id="dialog-confirm" style="display: none" i18n-always="true" ></div>
+	<div id="dialog-message" i18n-always="true" style="display: none"></div>
+	<div id="dialog-loading" style="display:none;" i18n-always="true" >
+		<div class="ui-widget-overlay ui-front"></div>
+		<div id="email-sending-loading" style="position: absolute;height:auto;overflow:hidden;top:50%;left:50%;margin:-25px 0px 0px -25px;">
+			<img style="height:50px;" border="0" src="/qrt/image/loading.gif"/>
+		</div>
+	</div>
+	
+	<div id="coverDiv" style="display: none; width: 100%; height: 100%;" class="ui-widget-overlay ui-front">
+	</div>
+</body>
+</html>

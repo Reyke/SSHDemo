@@ -1,0 +1,123 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+    http://www.springframework.org/schema/beans/spring-beans-3.2.xsd   
+    http://www.springframework.org/schema/aop   
+    http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+	<bean id="demoDAO" class="com.qvc.cn.it.report.dao.GenericDAO">
+		<constructor-arg>
+			<value>com.qvc.cn.it.report.model.Demo</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!-- <bean id="employeeDAO" class="com.qvc.cn.it.report.dao.GenericDAO">
+		<constructor-arg>
+			<value>com.qvc.cn.it.report.model.Employee</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean> -->
+	<bean id="countryDAO" class="com.qvc.cn.it.report.dao.GenericDAO">
+		<constructor-arg>
+			<value>com.qvc.cn.it.report.model.Country</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="projectDAO" class="com.qvc.cn.it.report.dao.GenericDAO">
+		<constructor-arg>
+			<value>com.qvc.cn.it.report.model.Project</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="roleDAO" class="com.qvc.cn.it.report.dao.GenericDAO">
+		<constructor-arg>
+			<value>com.qvc.cn.it.report.model.Role</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="empTaskSummaryDAO" class="com.qvc.cn.it.report.dao.GenericDAO">
+		<constructor-arg>
+			<value>com.qvc.cn.it.report.model.EmpTaskSummary</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="issueTypeDAO" class="com.qvc.cn.it.report.dao.GenericDAO">
+		<constructor-arg>
+			<value>com.qvc.cn.it.report.model.IssueType</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="dataIssueTypeDAO" class="com.qvc.cn.it.report.dao.GenericDAO">
+		<constructor-arg>
+			<value>com.qvc.cn.it.report.model.DataIssueType</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="defectStatusTypeDAO" class="com.qvc.cn.it.report.dao.GenericDAO">
+		<constructor-arg>
+			<value>com.qvc.cn.it.report.model.DefectStatusType</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="screenShotDAO" class="com.qvc.cn.it.report.dao.GenericDAO">
+		<constructor-arg>
+			<value>com.qvc.cn.it.report.model.ScreenShot</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="templateHeadDAO" class="com.qvc.cn.it.report.dao.GenericDAO">
+		<constructor-arg>
+			<value>com.qvc.cn.it.report.model.TemplateHead</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="templateDetailDAO" class="com.qvc.cn.it.report.dao.GenericDAO">
+		<constructor-arg>
+			<value>com.qvc.cn.it.report.model.TemplateDetail</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="issueComponentDAO" class="com.qvc.cn.it.report.dao.GenericDAO">
+		<constructor-arg>
+			<value>com.qvc.cn.it.report.model.IssueComponent</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="reportDAO" class="com.qvc.cn.it.report.dao.GenericDAO">
+		<constructor-arg>
+			<value>com.qvc.cn.it.report.model.ReportPOJO</value>
+		</constructor-arg>
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+</beans>

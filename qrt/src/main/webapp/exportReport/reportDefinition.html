@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="../js/jquery-ui-1.10.3/jquery-1.9.1.js"></script>
+	<script type="text/javascript" language="javascript" src="../js/common.js"></script>
+	<script type="text/javascript" src="../js/jquery/jquery.i18n.properties-min-1.0.9.js"></script>
+	<script type="text/javascript" src="../js/PlaceholderSupporter.js"></script>
+	<script type="text/javascript" src="../js/jquery-ui-1.10.3/ui/jquery-ui.js"></script>
+	<script type="text/javascript" src="../js/propertyBinding.js"></script>
+	<script type="text/javascript" src="../js/colortable.js"></script>
+	<script type="text/javascript" src="../js/json2.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/main.css" />
+	<link rel="stylesheet" href="../js/jquery-ui-1.10.3/themes/base/jquery.ui.all.css" />
+</head>
+<body>
+	<div id="content" class="center">
+		<script type="text/javascript" src="/qrt/js/site/reportDefinition.js"></script>
+		<div class="header"></div>
+		
+		<div id="addNewTemplate"><a>#{ApplicationResource.definition.label.addT}</a></div>
+		
+		<table id="reportTemplates">
+			<thead>
+				<tr>
+					<th width="30%">#{ApplicationResource.definition.table.template}</th>
+					<th width="20%">#{ApplicationResource.definition.table.create}</th>
+					<th width="20%">#{ApplicationResource.definition.table.status}</th>
+					<th width="30%">#{ApplicationResource.definition.table.action}</th>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+		
+		<div id="templateUpdateForm" style="display : none;">
+			<form id="formTemplate">
+				<input type="hidden" id="templateId"/>
+				<label for="textTemplateName" class="commonLabel">#{ApplicationResource.definition.addtemplate.templateN}</label>
+				<input type="text" id="textTemplateName" />
+				<input type="checkbox" id="templateStatus"><label for="templateStatus">#{ApplicationResource.definition.table.status}</label> </input>
+				
+				<div id="divColumns">
+				
+				</div>
+			</form>
+		</div>
+		
+		<div id="templateExpression" style="display: none;">
+			<input type="text" id="clonedExpression" readonly="readonly" /><input type="hidden" id="orginalInputIndex" /> <div id="componentBackSpace" title="Delete">&lt;--</div>
+			<div id="selectArea"></div>
+		</div>
+		
+		<div id="componentBox" style="display: none;">
+			<a class="changeTemplate button" var="{id}">#{ApplicationResource.definition.table.change}</a>
+			<a class="deleteTemplate button" var="{id}">#{ApplicationResource.definition.table.delete}</a>
+			<a class="cloneTemplate button" var="{id}">#{ApplicationResource.definition.table.clone}</a>
+			
+			<div class="defaultAppendButton"><a>#{ApplicationResource.definition.addtemplate.createN}</a></div>
+			<div class="buttonAppend" title="#{ApplicationResource.definition.addtemplate.appendN}"></div>
+			
+			<div class="componentRow">
+				<br idx="{i}" /><input type="hidden" idx="{i}" value="{id}" class="columnId" />
+				<label idx="{i}" class="commonLabel">#{ApplicationResource.definition.addtemplate.column} {i}</label>
+				<input type="text" idx="{i}" class="column_title" value="{title}" />	
+				<input type="text" idx="{i}" class="column_expression" title="{expression}" value="{expression}" var="{orginal_expression}" readonly="readonly" />
+				<div idx="{i}" class="buttonInsert" title="#{ApplicationResource.definition.addtemplate.insertN}"></div>
+				<div idx="{i}" class="buttonRemove" title="#{ApplicationResource.definition.addtemplate.remove}"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

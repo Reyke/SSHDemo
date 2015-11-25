@@ -1,0 +1,45 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="js/jquery-ui-1.10.3/themes/base/minified/jquery-ui.min.css">
+<script src="js/jquery-ui-1.10.3/jquery-1.9.1.js" type="text/javascript"></script>
+<script type="text/javascript" src="js/PlaceholderSupporter.js"></script>
+</head>
+
+<body>
+<script type="text/javascript" src="js/site/login.js" ></script>
+		<div class="login" style="height:500px;">
+			<div id="homePageLogo">
+			</div>
+			<div id="homePageLogin">
+				<form id="loginForm" method="post">
+					<div id="loginForm">
+						<div id="loginTitle">#{ApplicationResource.login.title}</div>
+						<div id="errorMsg"></div>
+						<div id="divLoginUser"> 
+							<input type="text" name="name" id="name" onkeydown="return validNumber(8, event);" 
+								onSelect="this.selected=true;" title="#{ApplicationResource.login.enter.empno}" placeholder="#{ApplicationResource.login.label.username}" onblur="checkEmployee()"/>
+							<div id="login_re" style="display: none;margin-bottom: -20px;color: red">#{ApplicationResource.login.input.message.empno}</div>
+						</div>
+						<div id="divLoginPassword">
+							<input type="password" id="password" name="password" title="#{ApplicationResource.login.enter.password}"
+								placeholder="#{ApplicationResource.login.label.password}" onkeydown="return validNumber(4, event);" onblur="checkPassword()" onSelect="this.selected=true;" />
+							<div id="login_rp" style="display: none;color: red">#{ApplicationResource.login.input.message.password}</div>
+						</div>
+						<div id="actionLogin" style="margin-bottom: 10px">
+							<input type="button" class="QRTbutton" value="#{ApplicationResource.login.button.login}" onclick="dologin()" />
+						</div>
+					</div>
+				</form>			
+			</div>
+			<div id="homePageInformation">
+				<ul>
+					<li>2014-1-3, first release.</li>
+					<li>2014-1-6, UI tuning.</li>
+					<li>Any issue, contact <a href="mailto:00909932@qvc.com">00909932@qvc.com</a></li>
+				</ul>
+			</div>
+		</div>
+</body>
+</html>

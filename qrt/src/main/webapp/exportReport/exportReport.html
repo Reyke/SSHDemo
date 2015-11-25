@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript"
+	src="../js/jquery-ui-1.10.3/jquery-1.9.1.js"></script>
+<script type="text/javascript" language="javascript"
+	src="../js/common.js"></script>
+<script type="text/javascript"
+	src="../js/jquery/jquery.i18n.properties-min-1.0.9.js"></script>
+<script type="text/javascript" src="../js/PlaceholderSupporter.js"></script>
+<script type="text/javascript"
+	src="../js/jquery-ui-1.10.3/ui/jquery-ui.js"></script>
+<script type="text/javascript" src="../js/propertyBinding.js"></script>
+<script type="text/javascript" src="../js/colortable.js"></script>
+<script type="text/javascript" src="../js/json2.js"></script>
+<link rel="stylesheet" type="text/css" href="../css/main.css" />
+<link rel="stylesheet"
+	href="../js/jquery-ui-1.10.3/themes/base/jquery.ui.all.css" />
+</head>
+<body>
+	<div id="content">
+		<script type="text/javascript" src="/qrt/js/site/reportExport.js"></script>
+		<div class="header"></div>
+		<div class="content" style="width:auto;overflow:hidden;">
+			<div id="reportExportFilter">
+				<div id="reportExportFilter">
+					<div class="exportReportSelectorField">
+						<label for="countrySelector" class="commonLabel">#{ApplicationResource.exportR.label.country}</label>
+						<select id="countrySelector" class="commonInput">
+							<option value="">#{ApplicationResource.exportR.select.country}</option>
+						</select>
+					</div>
+					<div class="exportReportSelectorField">
+						<label for="projectSelector" class="commonLabel">#{ApplicationResource.exportR.label.project}</label>
+						<select id="projectSelector" class="commonInput">
+							<option value="">#{ApplicationResource.exportR.select.project}</option>
+						</select>
+					</div>
+					<div class="exportReportSelectorField">
+						<label for="taskSelector" class="commonLabel">#{ApplicationResource.exportR.label.task}</label> <select
+							id="taskSelector" class="commonInput">
+							<option value="">#{ApplicationResource.exportR.select.task}</option>
+						</select>
+					</div>
+					<div class="exportReportSelectorField">
+						<label for="templateSelector" class="commonLabel">#{ApplicationResource.exportR.label.template}</label>
+						<select id="templateSelector" class="commonInput">
+							<option value="">#{ApplicationResource.exportR.select.template}</option>
+						</select>
+					</div>
+					<div id="buttonExport" class="exportReportSelectorField">
+						<a id="exportButton" class="button">#{ApplicationResource.exportR.label.export}</a>
+					</div>
+				</div>
+			</div>
+			<div id="taskInfoDiv">
+				<ul id="taskInfo"></ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

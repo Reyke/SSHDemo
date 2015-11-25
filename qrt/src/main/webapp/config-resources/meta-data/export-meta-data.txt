@@ -1,0 +1,1 @@
+mysqldump -t qa_report country data_issue_data_type defect_status_type demo domain issue_component issue_type project role scope -uQA_ADMIN -p -h192.168.1.30 > c:\meta-data.sql

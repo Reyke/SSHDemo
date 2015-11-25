@@ -1,0 +1,24 @@
+<html>
+<head>
+<title></title>
+<script type="text/javascript" src="js/jquery-ui-1.10.3/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="js/jsonBinding.js"></script>
+
+<script type="text/javascript">
+$(function () {
+	
+	jsonBinding.binding("maindata", $("#myForm"), true);
+});
+</script>
+</head>
+
+<body>
+	<form id="myForm">
+		Name : <input type="text" value="#{employee.name}" /><br />
+		Age: <input type="text" value="#{employee.age}" /> <br />
+		Sex : <input type="text" value="#{employee.sex}" /><br />
+		Height: <input type="text" value="#{employee.height}" />
+		<br /> My name is <span>#{employee.name}</span>
+	</form>
+</body>
+</html>

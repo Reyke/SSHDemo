@@ -1,0 +1,62 @@
+@CHARSET "UTF-8";
+ul{margin:0px;padding:0px;padding-left:10px;padding-bottom:8px;}
+li{list-style-type: none;background-repeat: no-repeat;}
+ul > li{font-weight:bold;font-size:1em;}
+ol{padding-left:15px;_padding-left:7px;*padding-left:7px;}
+ol > li{font-size:0.9em;padding-bottom:4px;padding-left: 22px;padding-top: 0px;margin-top: 2px;margin-bottom: 2px;}
+display-inlineblock{display: inline-block;_display:inline;*display:inline;zoom:1;}
+div{border: 0px solid red;}
+.status_red{background-image: url("/qrt/image/red.png");}
+.status_yellow{background-image: url("/qrt/image/yellow.png");}
+.status_green{background-image: url("/qrt/image/green.png");}
+.status_orange{background-image: url("/qrt/image/orange.png");}
+.padding-margin{padding:0px;margin:0px;}
+.div-border{border: 1px solid #eee;border-bottom: 0px;height: 0px;background: #ccc;}
+div#screen-shot-file-button span{text-align: center;}
+div#content{width:1000px;margin:0px auto;}
+div#content div.header,div.content,div.footer{width:100%;}
+div#content div.header{height:0px;}
+div#content div.content{height:100%;overflow:hidden;}
+div#content div.footer{}
+
+div#content div.content div.content-header div.history-content{width:700px;margin:0px auto;}
+div#content div.content div.content-header div.history-content span{width:200px;}
+div#content div.content div.content-header div.history-content table{width:100%;border-collapse: collapse;border: 1px solid #aaa;}
+div#content div.content div.content-header div.history-content table th,td{text-align: center;border: 1px solid #eee;}
+
+div#content div.content div.content-body {height:100%;overflow: hidden;margin-top:20px;}
+div#content div.content div.content-body div.content-body-left{width:450px;height:452px;display:inline-block;_display:inline;*display:inline;zoom:1;float:left;border: 1px solid #eee;}
+
+div#content div.content div.content-body div.content-body-left div#div-task option{width:360px;}
+
+div#content div.content div.content-body div.content-body-right{width:540px;height:450px;display:inline-block;_display:inline;*display:inline;zoom:1;float:right;border: 1px solid #eee;}
+
+div#content div.content div.content-body div.content-body-right div.content-body-right-top{padding-bottom: 5px;}
+div#content div.content div.content-body div.content-body-right div.content-body-right-top div.respon-tester span{font-size:14px;font-weight:blod;padding-top:8px;padding-bottom:8px;width:120px;text-align:center;display:inline-block;_display:inline;*display:inline;zoom:1;}
+div#content div.content div.content-body div.content-body-right div#content-body-right-issue-form{height:450px;overflow:auto;}
+div.div-issue-type span{width:111px;font-size:14px;font-weight:blod;text-align:right;display:inline-block;_display:inline;*display:inline;zoom:1;}
+div.div-issue-type select{padding-left:10px;width:160px;}
+div#content div.content div.content-body div.content-body-right div.content-body-right-issue-form{height:410px;overflow:auto;}
+div#content div.content div.content-body div.content-body-right div.content-body-right-middle div.div-data-issue{border:1px solid #EEE;overflow:auto;}
+div.div-issue  span{width:110px;text-align:right;display:inline-block;_display:inline;*display:inline;zoom:1;}
+div.div-issue  textarea{width:390px;height:110px;}
+
+div.div-issue div{margin-bottom: 10px;}
+div.div-issue > span{display:inline-block;_display:inline;*display:inline;zoom:1;width:120px;text-align:right;}
+div.div-issue input{display:inline-block;_display:inline;*display:inline;zoom:1;}
+div.div-issue textarea{display:inline-block;_display:inline;*display:inline;zoom:1;}
+
+
+
+
+/* show img */
+div#img-show{height:50px;width:auto;overflow: hidden;margin-top: 20px;margin-left: 20px;border: 1px solid #EEE;}
+div#img-show > div{border: 1px solid #5DA8C2;margin:4px;display: inline-block;}
+div#img-show > div > div#delImg{width:100%;height:20px;position:absolute;z-index:99;}
+div#img-show > div > div#delImg > img{height:18px;width:18px;float:right;display:none;filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity:0.5;opacity:0.5;}
+div#img-show > div > img{padding:2px;height: 40px;width: auto;overflow: hidden;}
+
+/* div Pop */
+
+div#divPop{position:absolute;left:0px;top:0px;height:100%;width:100%;overflow:hidden;background-color:gray;filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity:0.5;opacity:0.5;z-index:999;}
+div#imgPop{width:970px;height:550px;position:absolute;top:50%;left:50%;margin:-278px 0px 0px -483px;z-index:9999;border:1px solid #5DA8C2;background-color:#FFF;}

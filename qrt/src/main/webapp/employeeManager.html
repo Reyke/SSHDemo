@@ -1,0 +1,192 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<title>Insert title here</title>
+<link rel="stylesheet" href="css/employee.css" />
+<link rel="stylesheet"
+	href="js/jquery-ui-1.10.3/themes/base/jquery-ui.css" /> 
+<script src="js/jquery-ui-1.10.3/jquery-1.9.1.js" type="text/javascript"></script>
+<script src="js/jquery-ui-1.10.3/ui/jquery-ui.js" type="text/javascript"></script>
+<script src="js/common.js" type="text/javascript"></script>
+</head>
+<body>
+	<script src="js/site/jquery.validate.min.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="css/employee.css" />
+	<script src="js/site/employee.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		
+		var activedRow = 0;
+		var passChanged = false;
+		var opflag = "save";
+		var g_employee = {};
+		$(function() {
+			doValidate();
+			$.get("service/employee.json", function(data) {
+				g_employee = data['object'];
+				
+				var html 	= '';
+				var tr 		= '<tr>'
+								+ '<td class="emp_no">{number}</td>'
+								+ '<td>{name}</td>'
+								+ '<td>{email}</td>'
+								+ '<td val="{val}">{role_name}</td>'
+								+ '<td><input type="button" value="#{ApplicationResource.user.button.change}" class="change" />&nbsp;'
+								+ '<input type="button" value="#{ApplicationResource.user.button.delete}" class="delete" /></td>'
+								+ '</tr>';
+				$.each(data['object']['employees'],function(k,v){
+					html 	+= tr.replace(/{number}/g, v["number"]).replace(/{name}/,v["name"])
+								.replace(/{email}/g,v["email"]).replace(/{role_name}/g,v.role.name)
+								.replace(/{val}/g,v.role.id); 
+				});
+				$("#content_head").append(html);
+				
+				$("#content_head tr").on("mouseenter", function() {
+					$(this).addClass("hover");
+				});
+				$("#content_head tr").on("mouseleave", function() {
+					$(this).removeClass("hover");
+				});
+				
+				$(".delete").on("click", deleterow);
+				$(".change").on("click", changerow);
+				$("#register").on("click", doRegister);
+				$("#save").on("click", doUpdate);
+				$("#reset").on("click", doReset);
+				$("#save").attr("disabled", true);
+				$("#operator_no").val(currentEmployeeNumber);
+
+				jQuery.validator.addMethod("maxlength", function(value, element, params) {
+					var result = true;
+					
+					
+					return this.optional(element) || result;
+				}, jQuery.validator.format("<br/><span style='color:red'>your input emp number have been used!!</span>"));
+
+				jQuery.validator.addMethod("empnovalid", function(value, element, params) {
+					var result = true;
+					if(opflag == "update") return this.optional(element) || result;
+					$("#content_inner td.emp_no").each(function(){
+						if(value == $(this).text()) result = false;
+					});
+					
+					var employees = g_employee.employees;
+					for(var i in employees){
+						if(employees[i].number == value) result = false;
+					}
+					
+					return this.optional(element) || result;
+				}, jQuery.validator.format("<span style='color:red'>your input emp number have been used!!</span>"));
+
+				/* validate model */
+				$("#target")
+						.validate(
+								{
+									rules : {
+										empname : {
+											required: true,
+											maxlength :20
+										},
+										
+										empemail : {
+											required : true,
+											email : true
+										},
+										emprole : {
+											required: true
+											
+										}
+									},
+									wrapper : "div",
+									messages : {
+										empname :{
+											required: "<span style='color:red'>Please enter your name</span>",
+											maxlength: "<span style='color:red'>emp name should be less than 20 charactors</span>" 
+											
+											},
+										
+										empemail : {
+											required : "<span style='color:red'>Please provide a valid email address</span>",
+											email: "<span style='color:red'>Please enter a valid email address</span>"
+										},
+										emprole : {
+											required : "<span style='color:red'>Please provide a role</span>"
+											
+										}
+									}
+								});
+
+			}, "json");
+			
+			$("#emprole").append("<option value=''></option>");
+			$.get("service/allValidRoles", function(data) {
+				for ( var i in data) {
+					$("#emprole").append(
+							"<option value='"+data[i].id+"'>" + data[i].name
+									+ "</option>");
+				}
+			}, "json");
+
+			//设置隐藏域 的当前操作人
+			
+		});
+	</script>
+	<div id="content" class="ui-widget">
+		<div id="head_inner">
+			<form id="target">
+				<input type="hidden" id="operator_no" name="operator_no" value="sampson" />
+				<table id="user-info" border="1px" width="100%" class="ui-widget-content">
+					<tr>
+						<td width="15%"><label for="empno">#{ApplicationResource.user.label.employeeno}<span style="color: red">*</span></label></td>
+						<td width="40%"><input type="text" name="empno" id="empno" /><div><span style="color:red"></span></div></td>
+						<td width="10%"><label for="empname">#{ApplicationResource.user.label.name}<span style="color: red">*</span></label></td>
+						<td width="35%"><input type="text" id="empname" name="empname" /></td>
+					</tr>
+					<tr>
+						<td><label for="empemail">#{ApplicationResource.user.label.email}<span style="color: red">*</span></label></td>
+						<td><input type="text" id="empemail" name="empemail" /></td>
+						<td><label for="emprole">#{ApplicationResource.user.label.role}:<span style="color: red">*</span></label></td>
+						<td><select name="emprole" id="emprole" style="width: 135px; margin-left:2px"></select></td>
+					</tr>
+					<tr>
+						<td><label for="password">#{ApplicationResource.user.label.password}<span style="color: red">*</span></label></td>
+						<td><input type="password" id="password" name="password" value="1234" onSelect="this.selected=true;"/><span style="color:red">#{ApplicationResource.user.label.remind}</span><div></div></td>
+						<td colspan="2" align="center">
+							<input type="button" value="#{ApplicationResource.user.button.add}" id="register" />&nbsp;
+							<input type="button" value="#{ApplicationResource.user.button.save}" id="save" />&nbsp;
+							<input type="button" value="#{ApplicationResource.user.button.reset}" id="reset" />
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<!-- <div style="height: 140px;width:100px"></div> -->
+		<div id="content_inner">
+			<table border="1px" width="100%" class="ui-widget ui-widget-content">
+				<thead>
+					<tr class="ui-widget-header ">
+						<th width="20%">#{ApplicationResource.user.label.employeeno}</th>
+						<th width="20%">#{ApplicationResource.user.label.name}</th>
+						<th width="20%">#{ApplicationResource.user.label.email}</th>
+						<th width="20%">#{ApplicationResource.user.label.role}</th>
+						<th width="20%">#{ApplicationResource.user.table.action}</th>
+					</tr>
+				</thead>
+				<tbody id="content_head">
+					<tr style="display: none">
+						<td class="emp_no"></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td><input type="button" value="change" class="change" />&nbsp;<input
+							type="button" value="delete" class="delete" /></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<!--div id="dialog" title="are you sure delete this user?"
+		style="display: none">
+		<p>whether delete this employee, click 'Yes' delete!</p>
+	</div -->
+</body>
+</html>

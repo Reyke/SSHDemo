@@ -1,0 +1,778 @@
+@CHARSET "UTF-8";
+/***************************************common info start***********************************/
+body {
+	font-size: 62.5%;
+	font-family: "Trebuchet MS", "Arial", "Helvetica", "Verdana", "sans-serif";
+	margin: 0px;
+}
+
+table {
+	font-size: 1em;
+	border-collapse: collapse;
+}
+
+.display-inlineblock{
+	display:inline-block;
+	*display:inline;
+	zoom:1;
+}
+
+div#divHeader {
+	width : 1260px;
+	height : 100px;
+	margin : 0px auto;
+}
+
+a#anchorLogOff {
+	margin-right: 5px;
+}
+
+div#divHeader div#head-logo,div#divMainMessageBox,div#divHeaderRightBox{
+	height : 100px;
+	display:inline-block;
+	*display:inline;
+	zoom:1;
+}
+
+div#divHeader div#head-logo{
+	float:left;
+}
+
+div#divHeader div#divMainMessageBox{
+	width:620px;
+	overflow:hidden;
+	float:left;
+	font-family: Verdana,Arial,sans-serif/*{ffDefault}*/;
+	font-size: 1.5em/*{fsDefault}*/;
+}
+
+div#divHeader div#divHeaderRightBox{
+	width : 410px;
+	float : right;
+}
+
+div#divHeader div#divHeaderRightBox div#divLanguageBox{
+	width : 100px;
+	height: 35px;
+	float : right;
+	display:inline-block;
+	*display:inline;
+	zoom:1;
+	padding-top:5px;
+}
+
+div#languageBox label{
+	width:44px;
+}
+
+div#languageBox label span{
+	padding:0.4em 0.1em;
+	width:44px;
+}
+
+div#divHeader div#divUserInfoBox{
+	width : 325px;
+	_width:310px;
+	*width:310px;
+	height: 35px;
+	font-size : 1em;	
+	font-weight : bold;
+	padding-top:10px;
+}
+
+div#divHeader div#divUserInfoBox div#divLogOff{
+	width: 48px;
+}
+
+div#divHeader div#divUserInfoBox div#divRoleInfo{
+	width: 115px;
+	*width: 106px;
+}
+
+div#divHeader div#divUserInfoBox div#divEmpInfo{
+	width: 115px;
+	*width: 106px;
+}
+
+div#divHeader div#divUserInfoBox div{
+	padding-right : 2px;
+	float: right;
+	display:inline-block;
+	*display:inline;
+	zoom:1;
+}
+
+div#divHeader div#divUserInfoBox span#txtRole{
+	width: 38px;
+}
+
+div#divHeader div#divUserInfoBox span#txtEmpNo{
+	width: 33px;
+}
+
+div#divHeader div#divUserInfoBox span{
+	margin-right: 0px 3px 0px 0px;
+	overflow: hidden;
+	width: 74px;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	-moz-binding: url('ellipsis.xml#ellipsis');
+	display: inline-block;
+	white-space: nowrap;
+	height: 15px;
+}
+
+div#divHeader div#divUserInfoBox div a{
+	float: right;
+	margin-top : 0px;
+	display:inline-block;
+	*display:inline;
+	zoom:1;
+}
+
+#divBody {
+	width : 1260px;
+	margin:0px auto;
+}
+
+#divFooter {
+	width : 1260px;
+	height : 15px;
+	_height: 15px;
+	*height: 15px;
+	text-align : center;
+	padding-top:20px;
+	_padding-top:20px;
+	*padding-top:20px;
+	margin:0px auto;
+}
+
+#imgLogo {
+	width: 82px; 
+	height: 88px;	
+}
+
+#logoText {
+	height : 30px;
+	width : 200px;
+	font-size : 1.4em;
+	font-weight : bolder;
+	overflow: hidden;
+}
+
+div.ui-dialog {
+	font-size : 1.1em;
+}
+
+a.button {
+	margin-left: 10px;
+}
+
+a {
+	cursor: pointer;
+	color: #4400CC;
+}
+
+a:hover {
+	color: #77FF00;
+}
+
+a:active {
+	color: #AA7700;
+}
+
+label.commonLabel {
+	float: left;
+	width: 150px;
+	text-align: right;
+	height: 22px;
+	line-height: 20px;
+	padding-top: 8px;
+	margin-right: 5px;
+}
+
+.commonInput {
+	width: 250px;
+	height: 30px;
+	line-height: 25px;
+	margin-left: 5px;
+	float: left;
+}
+
+div#content.center{
+	width: 80%; 
+	margin-left:auto; 
+	margin-right: auto;
+}
+/***************************************common info end***********************************/
+
+/****************************Menu Start***************************************/
+div#divMenu-background{
+	height:40px;
+	overflow:hidden;
+	background : url(../js/jquery-ui-1.10.3/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png) repeat-x;
+}
+div#divMenu-background div#divMenu {
+	width:1260px;
+	height : 40px;
+	line-height : 40px;
+	font-weight : bolder;
+	margin:0px auto;
+}
+
+#divMenu a {
+	display : inline-block;
+	text-decoration : none;
+	width : 150px;
+	text-align : center;
+	cursor : pointer;
+	color : #FF8F59;
+}
+
+#divMenu a:hover {
+	background : url(../image/menu-item-bg.png) repeat-x;
+}
+/****************************Menu End***************************************/
+
+/****************************Login Screen Start ****************************/
+div.login{width:1200px;margin:0px auto;}
+div#homePageLogo {
+	display : inline-block;
+	overflow : hidden;
+	background : url(../image/homepage.jpg) no-repeat;
+	width : 900px;
+	height : 500px;
+	overflow : hidden;
+	float : left;
+}
+
+div#homePageLogin {
+	position : relative;
+	display : inline-block;
+	width : 300px;
+	height : 300px;
+	overflow : hidden;
+	float : left;
+}
+
+div#homePageInformation {
+	display : inline-block;
+	width : 300px;
+	height : 200px;
+	overflow : hidden;
+	float : left;
+	background : url(../image/text-area-bg.png) repeat;
+	line-height : 30px;
+	text-align : left;
+}
+
+div#homePageInformation ul{
+	margin-top : 0px;
+}
+
+#loginForm {
+	border : 1px solid #E0E0E0;
+	border-radius : 4px;
+	width : 300px;
+	text-align : center;
+}
+
+#loginForm #loginTitle {
+	/* opacity: .5; */
+	background: url(../js/jquery-ui-1.10.3/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png) repeat-x;
+	
+	width : 300px;
+	height : 40px;
+	font-size : 2.0em;
+	text-align : center;
+	font-weight : bolder;
+	letter-spacing : 8px;
+	border-radius : 4px;
+	margin-left : auto;
+	margin-right : auto;
+	line-height : 40px;
+}
+
+div#divLoginUser{
+	display : inline;
+}
+
+div#actionLogin {
+	text-align: right;
+	padding-right : 20px;
+}
+
+button#btnLogin  {
+	line-height : 35px;
+	height : 35px;
+	width : 100px;
+	font-weight : bolder;
+	margin-bottom : 10px;
+}
+
+input#name {
+	margin-top : 10px;
+	width : 220px;
+	height : 35px;
+	line-height : 35px;
+	background : url(../image/user.png) no-repeat;
+	padding-left : 40px;
+}
+
+#divLoginPassword input#password {
+	margin-top : 32px;
+	margin-bottom : 10px;
+	width : 220px;
+	line-height : 35px;
+	height : 35px;
+	background : url(../image/password.png) no-repeat;
+	padding-left : 40px;
+}
+/****************************Login Screen End ****************************/
+
+/****************************Common button Start****************************/
+.QRTbutton {
+	display: inline-block;
+	position: relative;
+	padding: .4em 1em;
+	line-height: normal;
+	margin-right: .1em;
+	cursor: pointer;
+	vertical-align: middle;
+	text-align: center;
+	overflow: visible; /* removes extra width in IE */
+	font-family: Verdana,Arial,sans-serif/*{ffDefault}*/;
+	font-size: 1.5em/*{fsDefault}*/;
+	border: 1px solid #d3d3d3;
+	background: #e6e6e6 url(../js/jquery-ui-1.10.3/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png) 50% 50% repeat-x;
+	font-weight: 400;
+	color: #555;
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border-top-left-radius: 4px;
+	border: 1px solid #d3d3d3;
+	align-items: flex-start;
+	-webkit-appearance: push-button;
+	white-space: pre;
+	-webkit-writing-mode: horizontal-tb;
+	
+}
+
+/****************************Common button End****************************/
+
+/****************************Report Definition **************************/
+table#reportTemplates {
+	width : 100%;
+	table-layout: fixed;
+	text-align: center;
+	
+	margin-left: auto;
+	margin-right: auto;
+}
+
+table#reportTemplates thead tr,table#users thead tr{ 
+	height: 40px;
+}
+
+table#reportTemplates thead td,table#users thead td{ 
+	font-size: 1.2em;
+	font-weight: bolder;
+}
+
+table#reportTemplates tbody tr,table#users tbody tr{ 
+	height: 25px;
+}
+
+table#reportTemplates thead td,table#users tbody td{ 
+	font-size: 1.0em;
+}
+
+div#addNewTemplate {
+	text-decoration: underline;
+	cursor: pointer;
+	text-align: right;
+}
+
+/************************************************************/
+
+div#templateUpdateForm {
+	width: 600px;
+	line-heght: 20px;	
+	text-align: left;
+	font-size: 1.3em;
+}
+
+div#templateUpdateForm div.defaultAppendButton {
+	width: 60%;
+	text-align: center;
+	font-size: 1.5em;
+	cursor: pointer;
+	margin-top: 20px;
+	margin-left: 40px;
+}
+
+div#templateUpdateForm div.defaultAppendButton a{
+	color: #4400CC;
+}
+
+div#templateUpdateForm div.defaultAppendButton a:hover {
+	color: #77FF00;
+}
+
+div#templateUpdateForm div.defaultAppendButton a:active {
+	color: #AA7700;
+}
+
+div#templateUpdateForm div.addNewTemplate a{
+	color: #4400CC;
+}
+
+div#templateUpdateForm div.addNewTemplate a:hover {
+	color: #77FF00;
+}
+
+div#templateUpdateForm div.addNewTemplate a:active {
+	color: #AA7700;
+}
+
+div#templateUpdateForm input {
+	height: 22px;
+	margin-left: 3px;
+}
+
+div#templateUpdateForm .column_title {
+	width: 80px;
+}
+
+div#templateUpdateForm .column_expression {
+	width: 200px;
+}
+
+div#templateUpdateForm .buttonInsert {
+	display:inline-block;
+	*display:inline;
+	zoom:1;
+	
+	width: 25px;
+	height: 25px;
+	background-image: url("/qrt/image/insert.png");
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+div#templateUpdateForm .buttonRemove {
+	display:inline-block;
+	*display:inline;
+	zoom:1;
+	
+	width: 25px;
+	height: 25px;
+	background-image: url("/qrt/image/remove.png");
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+div#templateUpdateForm .buttonAppend {
+	display:inline-block;
+	*display:inline;
+	zoom:1;
+	
+	width: 25px;
+	height: 25px;
+	background-image: url("/qrt/image/append.png");
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+/***********************************************************************/
+div#templateExpression div#componentBackSpace{
+	cursor: pointer;
+}
+
+div#templateExpression {
+	width: 400px;
+	height: 300px;
+	background-color: #F1E1FF;
+	position: absolute;
+}
+
+div#templateExpression #selectArea {
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+div#templateExpression #clonedExpression {
+	width: 90%;
+}
+
+div.componentCheckBox {
+	display: inline-block;
+	_display: inline;
+	*display: inline;
+	zoom:1;
+	
+	height: 20px;	
+	width: 50%;
+	text-align: left;
+	float: left;
+	
+	cursor: pointer;
+}
+
+.focus {
+	background-color: #DFFFDF;
+}
+
+div#componentBackSpace {
+	display: inline-block;
+	_display: inline;
+	*display: inline;
+	zoom:1;	
+}
+/*************************************Report Definition End *********************/
+
+/************************************Export Report Start************************/
+div#reportExportFilter {
+	margin-top: 10px;
+	width: 550px;
+	float:left;
+	text-align: center;
+}
+
+div.exportReportSelectorField {
+	width: 435px;
+	float:right;
+	margin-right:20px;
+	overflow:hidden;
+	height: 35px;
+	line-height: 25px;
+}
+
+div.exportReportSelectorField label {
+	margin-right: 30px;
+}
+
+div#reportExportFilter div#buttonExport {
+	text-align: right;
+	font-size: 1.4em;
+}
+
+
+/************************************Export Report End************************/
+
+/************************************Task Assignemt Start************************/
+input.text { margin-bottom:12px; width:95%; padding: .4em; }
+fieldset { padding:0; border:0; margin-top:25px; }
+h1 { font-size: 1.2em; margin: .6em 0; }
+.header{width:100%;height:50px;}
+.content{width:900px;height:auto;margin:0px auto;}
+/*@Override from jquery ui button  */
+.ui-button {display: inline-block;padding:0;line-height: normal;margin-right:0.1em;cursor: pointer;vertical-align: middle;text-align: center;overflow: visible;}
+div.ui-buttonset button.ui-button span.ui-button-text{height:13px;}
+div.content div#task-contain div#task-select,div#smoke-assignment{width:900px;margin:0px auto;margin-bottom:10px;}
+div.content div#task-contain div#task-select{height:90px;}
+div.content div#task-contain div#task-select label{font-family: Verdana,Arial,sans-serif;font-size: 1.3em;font-weight:bold;display:inline-block;*display:inline;zoom:1;width:188px;margin-left:23px;}
+div.content div#task-contain div#task-select div{display:inline-block;*display:inline;zoom:1;margin-bottom: 2px;}
+div.content div#task-contain div#task-select div#task-run-detail{font-family: Verdana,Arial,sans-serif;font-size: 1.3em;font-weight:bold;float:right;width:450px;height:35px;margin-top:10px;}
+div.content div#task-contain div#task-select div#task-select-project div.ui-buttonset{_margin-left:-3px;*margin-left:-3px;}
+div.content div#task-contain div#task-select div#task-select-left,div#task-select-right{display:inline-block;*display:inline;zoom:1;}
+div.content div#task-contain div#task-select div#task-select-left{float:left;}
+div.content div#task-contain div#task-select div#task-select-right{width:500px;float:right;}
+div.content div#task-contain div#task-select div#task-run-detail{margin-bottom: 0px;}
+div.content div#task-contain div#task-select div#task-run-detail div{float:right;}
+div.content div#task-contain div#smoke-assignment input{display:inline-block;margin:0px;padding:0px;vertical-align:middle;}
+div.content div#task-contain div#smoke-assignment label{font-family: Verdana,Arial,sans-serif;font-size: 1.2em;margin:0px 5px;vertical-align:middle;display:inline-block;*display:inline;zoom:1;width:183px;}
+div.content div#task-contain div#smoke-assignment div#somker-assignment-list{display:inline-block;;*display:inline;inline;zoom:1;}
+div#task-select-task div button span.ui-button-text{height:28px;*height:25px;_height:25px;padding:0px;}
+div#task-select-task div button#task-selector{_margin-left:3px;*margin-left:3px;}
+div#users-contain table {border-collapse: collapse; width: 900px;  margin:0px auto; }
+div#users-contain table td, div#users-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align:center; }
+.checkbox-assignmen{display:inline-block;*display:inline;zoom:1;}
+.ui-dialog .ui-state-error { padding: .3em; }
+.validateTips { border: 1px solid transparent; padding: 0.3em; }
+div#users-assignment{width:900px;margin:20px auto 0px;overflow:hidden;}
+div#users-assignment div#send-task{float:right;}
+div#users-assignment div#finish-time label{font-family: Verdana,Arial,sans-serif;font-size:1.2em;font-weight:bold;margin-left:20px;display:inline-block;*display:inline;zoom:1;float:left;line-height:20px;padding-right:5px;}
+div#users-assignment div#finish-time,div#timepicker{display:inline-block;*display:inline;zoom:1;float:left;}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+div.content div#task-contain div#task-select div{display:inline-block;margin-bottom: 0px;*display:inline;zoom:1;}
+}
+
+.task-excel-import{*margin-right:5px;}
+#importData-div{float:right;margin-bottom:5px;height45px;padding-bottom:10px;width:100%;overflow:hidden;position:relative;}
+#execute-import{margin-bottom:5px;}
+/************************************Task Assignemt End************************/
+
+/************************************Update Report Start************************/
+ul{margin:0px;padding:0px;padding-left:10px;padding-bottom:8px;}
+li{list-style-type: none;background-repeat: no-repeat;}
+ul > li{font-weight:bold;font-size:1em;}
+ol{padding-left:15px;_padding-left:7px;*padding-left:7px;}
+ol > li{font-size:0.9em;padding-bottom:4px;padding-left: 22px;padding-top: 0px;margin-top: 2px;margin-bottom: 2px;}
+.display-inlineblock{display: inline-block;*display:inline;zoom:1;}
+.float-left{float:left;}
+.float-right{float:right;}
+.status_red{background-image: url("/qrt/image/red.png");}
+.status_yellow{background-image: url("/qrt/image/yellow.png");}
+.status_green{background-image: url("/qrt/image/green.png");}
+.status_orange{background-image: url("/qrt/image/orange.png");}
+.hover_li_color1{background-color:#BBDDFF;}
+.hover_li_color2{background-color:#FFF;}
+.border-bottom0{height:31px;border-bottom:0px;}
+.border-bottom1{height:30px;border-bottom:1px solid #EEE;}
+.background-fff{background-color:#fff;}
+.background-gray{background-color:#F8F8F8;}
+.padding-margin{padding:0px;margin:0px;}
+.div-border{border: 1px solid #eee;border-bottom: 0px;height: 0px;background: #ccc;}
+.requires{color:red;font-size:1.1em;font-weight:bolder;margin-left:5px;}
+div#screen-shot-file-button span{text-align: center;}
+div#content{width:1000px;margin:0px auto;}
+div#content div.header,div.content,div.footer{width:100%;}
+div#content div.header{height:15px;}
+div#content div.content{height:100%;overflow:hidden;}
+div#content div.footer{}
+
+div#content div.content div.content-header div.history-content{width:700px;margin:0px auto;}
+div#content div.content div.content-header div.history-content span{width:200px;}
+div#content div.content div.content-header div.history-content table{width:100%;border-collapse: collapse;border: 1px solid #aaa;}
+div.history-content > table > th,div.history-content > table > td{text-align: center;border: 1px solid #eee;}
+
+div#content div.content div.content-body {height:100%;overflow: hidden;margin-top:20px;}
+div#content div.content div.content-body div.content-body-left{width:460px;height:452px;display:inline-block;*display:inline;zoom:1;float:left;border: 1px solid #eee;}
+
+div.div-task-menu{width:100%;height:30px;margin-bottom:5px;}
+span.div-task-menu-mytasks,span.div-task-menu-alltasks{font-size:11px;font-weight:bolder;width:80px;border:0px;line-height:30px;text-align:center;border-right:1px solid #eee;display:inline-block;*display:inline;zoom:1;cursor:pointer;}
+span.div-task-menu-mytasks{margin-left:10px;border-left:1px solid #EEE;}
+span.div-task-menu-alltasks{margin-left:-2px;}
+
+div#content div.content div.content-body div.content-body-left div#div-task option{width:360px;}
+#testcase-tree{height:390px;overflow:auto;}
+div#content div.content div.content-body div.content-body-right{width:530px;height:450px;display:inline-block;*display:inline;zoom:1;float:right;border: 1px solid #eee;}
+div#content div.content div.content-body div.content-body-right div.content-body-right-top{padding-bottom: 5px;}
+div#content div.content div.content-body div.content-body-right div.content-body-right-top div.respon-tester span{font-size:12px;font-weight:bold;padding-top:8px;padding-bottom:8px;width:60px;text-align:center;display:inline-block;*display:inline;zoom:1;}
+#tester,#now_tester{width:60px;font-weight:bold;}
+#div-now-test{display:none;}
+div#content div.content div.content-body div.content-body-right div#content-body-right-issue-form{height:450px;overflow:auto;position:relative;}
+div.div-issue-type span{width:80px;font-size:14px;font-weight:bold;margin-left:20px;display:inline-block;*display:inline;zoom:1;}
+div.div-issue-type select{padding-left:10px;width:160px;}
+span.manualPassed{padding-left:10px;margin-left:0px!important;width:160px!important;visibility:hidden;}
+span.manualPassed > span{font-size:12px!important;margin-left:3px;width:95px!important;font-size:12px!important;}
+div#content div.content div.content-body div.content-body-right div.content-body-right-issue-form{height:410px;overflow:auto;}
+div#content div.content div.content-body div.content-body-right div.content-body-right-middle div.div-data-issue{border:1px solid #EEE;overflow:auto;}
+div.div-issue span{width:150px;font-weight:bold;margin-left:20px;}
+div.div-issue input,div.div-issue select{margin:5px 20px 5px 20px;border:1px solid #000;width:478px;height:30px;line-height:30px;overflow:auto;}
+div.div-issue textarea{margin:5px 20px 10px 20px;width:478px;height:110px;}
+
+div.div-issue div{margin-bottom: 10px;}
+div.div-issue > span{display:inline-block;*display:inline;zoom:1;width:120px;text-align:right;}
+div.div-issue input{display:inline-block;*display:inline;zoom:1;}
+div.div-issue textarea{display:inline-block;*display:inline;zoom:1;}
+
+/* show img */
+div#img-show{height:65px;margin-top:10px;margin-left:20px;margin-right:20px;border:1px solid #EEE;}
+div#img-show > div{margin:4px;display:inline-block;*display:inline;zoom:1;width:auto;overflow:hidden;}
+div#img-show > div > div{width:40px;text-align:center;font-size:10px;margin:0px auto;}
+div#img-show > div > img{border: 1px solid #5DA8C2;padding:2px;height: 40px;width: auto;overflow: hidden;} 
+
+/* div Pop */
+
+div#divPop{position:absolute;left:0px;top:0px;height:100%;width:100%;overflow:hidden;background-color:gray;filter:alpha(opacity=50);-moz-opacity:0.5;-khtml-opacity:0.5;opacity:0.5;z-index:999;}
+div#imgPop{width:970px;height:550px;position:absolute;top:50%;left:50%;margin:-278px 0px 0px -483px;z-index:9999;border:1px solid #5DA8C2;background-color:#FFF;}
+
+div#divIssue,div#divPeople{padding:5px;width:300px;position:absolute;height:auto;background-color:#dedede;display:none;}
+div#sortBy ul{list-style:none;margin:0px;padding:0px;}
+div#sortBy li{margin:0px;padding:0px;display:inline-block;*display:inline;padding:3px 4px;margin:2px 3px;width:120px;height:25px;font-size:13px;}
+
+
+/************************************Update Report End************************/
+
+
+/*task status*/
+.finished{color:green;position:relative ;left:30px}
+.unfinished{color:red;position:relative ;left:30px}
+#taskInfoDiv{text-align:left;float:right;width:450px;height:auto;overflow:hidden;margin-top:6px;}
+/****************************************/
+
+/************************employee.css************************************/
+
+#content{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#content table {
+	text-align: left;
+	border-collapse: collapse;
+}
+
+#head_inner,#content_inner {
+	margin: 20px;
+}
+
+#content_innner{
+	width: 100%;
+}
+
+/*
+#head_inner{
+	position: fixed;
+	z-index : 20;
+	x:0px;
+	y:0px;
+	width:1000px;
+}
+#content_inner{
+	width: 1000px;
+
+}
+
+*/
+
+#head_inner form table#user-info tr td>label{
+	float: right;
+}
+
+#head_inner tr {
+	height: 45px;
+}
+
+
+
+.hover{
+	background : #FFEEDD;
+}
+.changeColor{
+	background : #CEFFCE;
+}
+
+
+#content_inner tr {
+	height: 30px;
+}
+#content_inner tr td{
+	text-align: center;
+}
+/*
+
+			*/
+.custom-combobox {
+	position: relative;
+	display: inline-block;
+}
+
+.custom-combobox-toggle {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin-left: -1px;
+	padding: 0;
+	/* support: IE7 */
+	*height: 1.7em;
+	*top: 0.1em;
+}
+
+.custom-combobox-input {
+	margin: 0;
+	padding: 0.3em;
+}
+/***************************************************************************/
